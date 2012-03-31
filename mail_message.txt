@@ -1,0 +1,79 @@
+                                                                                                                                                                                                                                                               
+Delivered-To: meeting@thedudewiththething.com
+Received: by 10.66.20.231 with SMTP id q7csp51pae;
+        Sat, 31 Mar 2012 07:39:09 -0700 (PDT)
+Received: by 10.182.172.100 with SMTP id bb4mr3070132obc.28.1333204749007;
+        Sat, 31 Mar 2012 07:39:09 -0700 (PDT)
+Return-Path: <sbutler@optaros.com>
+Received: from smtp204.dfw.emailsrvr.com (smtp204.dfw.emailsrvr.com. [67.192.241.204])
+        by mx.google.com with ESMTPS id jd9si7894795obb.63.2012.03.31.07.39.08
+        (version=TLSv1/SSLv3 cipher=OTHER);
+        Sat, 31 Mar 2012 07:39:08 -0700 (PDT)
+Received-SPF: neutral (google.com: 67.192.241.204 is neither permitted nor denied by best guess record for domain of sbutler@optaros.com) client-ip=67.192.241.204;
+Authentication-Results: mx.google.com; spf=neutral (google.com: 67.192.241.204 is neither permitted nor denied by best guess record for domain of sbutler@optaros.com) smtp.mail=sbutler@optaros.com
+Received: from localhost (localhost.localdomain [127.0.0.1])
+	by smtp20.relay.dfw1a.emailsrvr.com (SMTP Server) with ESMTP id 408BF258262
+	for <meeting@thedudewiththething.com>; Sat, 31 Mar 2012 10:39:08 -0400 (EDT)
+X-Virus-Scanned: OK
+Received: from smtp192.mex07a.mlsrvr.com (unknown [67.192.133.128])
+	by smtp20.relay.dfw1a.emailsrvr.com (SMTP Server) with ESMTPS id 3025025830D
+	for <meeting@thedudewiththething.com>; Sat, 31 Mar 2012 10:39:08 -0400 (EDT)
+Received: from DFW1MBX22.mex07a.mlsrvr.com ([192.168.1.164]) by
+ 207038-HUB10.mex07a.mlsrvr.com ([192.168.1.203]) with mapi; Sat, 31 Mar 2012
+ 09:39:07 -0500
+From: Shaun Butler <sbutler@optaros.com>
+To: Boston Leather District <boston-leatherdistrict@optaros.com>,
+	"meeting@thedudewiththething.com" <meeting@thedudewiththething.com>
+Date: Sat, 31 Mar 2012 09:39:06 -0500
+Subject: New Event
+Thread-Topic: New Event
+Thread-Index: Ac0PTAaswYnxe2V7QIi74vBnejwh4g==
+Message-ID: <11FB0A7C2C955741B3706164011FE65101AFF6252E@DFW1MBX22.mex07a.mlsrvr.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+acceptlanguage: en-US
+Content-Type: multipart/alternative;
+	boundary="_002_11FB0A7C2C955741B3706164011FE65101AFF6252EDFW1MBX22mex0_"
+MIME-Version: 1.0
+
+--_002_11FB0A7C2C955741B3706164011FE65101AFF6252EDFW1MBX22mex0_
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+
+V2hlbjogTW9uZGF5LCBBcHJpbCAwMiwgMjAxMiAxMDowMCBBTS0xMDozMCBBTS4gRWFzdGVybiBT
+dGFuZGFyZCBUaW1lDQoNCip+Kn4qfip+Kn4qfip+Kn4qfioNCg==
+
+--_002_11FB0A7C2C955741B3706164011FE65101AFF6252EDFW1MBX22mex0_
+Content-Type: text/calendar; charset="utf-8"; method=REQUEST
+Content-Transfer-Encoding: base64
+
+QkVHSU46VkNBTEVOREFSDQpNRVRIT0Q6UkVRVUVTVA0KUFJPRElEOk1pY3Jvc29mdCBFeGNoYW5n
+ZSBTZXJ2ZXIgMjAwNw0KVkVSU0lPTjoyLjANCkJFR0lOOlZUSU1FWk9ORQ0KVFpJRDpFYXN0ZXJu
+IFN0YW5kYXJkIFRpbWUNCkJFR0lOOlNUQU5EQVJEDQpEVFNUQVJUOjE2MDEwMTAxVDAyMDAwMA0K
+VFpPRkZTRVRGUk9NOi0wNDAwDQpUWk9GRlNFVFRPOi0wNTAwDQpSUlVMRTpGUkVRPVlFQVJMWTtJ
+TlRFUlZBTD0xO0JZREFZPTFTVTtCWU1PTlRIPTExDQpFTkQ6U1RBTkRBUkQNCkJFR0lOOkRBWUxJ
+R0hUDQpEVFNUQVJUOjE2MDEwMTAxVDAyMDAwMA0KVFpPRkZTRVRGUk9NOi0wNTAwDQpUWk9GRlNF
+VFRPOi0wNDAwDQpSUlVMRTpGUkVRPVlFQVJMWTtJTlRFUlZBTD0xO0JZREFZPTJTVTtCWU1PTlRI
+PTMNCkVORDpEQVlMSUdIVA0KRU5EOlZUSU1FWk9ORQ0KQkVHSU46VkVWRU5UDQpPUkdBTklaRVI7
+Q049U2hhdW4gQnV0bGVyOk1BSUxUTzpzYnV0bGVyQG9wdGFyb3MuY29tDQpBVFRFTkRFRTtST0xF
+PVJFUS1QQVJUSUNJUEFOVDtQQVJUU1RBVD1ORUVEUy1BQ1RJT047UlNWUD1UUlVFO0NOPUJvc3Rv
+biBMZWENCiB0aGVyIERpc3RyaWN0Ok1BSUxUTzpib3N0b24tbGVhdGhlcmRpc3RyaWN0QG9wdGFy
+b3MuY29tDQpBVFRFTkRFRTtST0xFPVJFUS1QQVJUSUNJUEFOVDtQQVJUU1RBVD1ORUVEUy1BQ1RJ
+T047UlNWUD1UUlVFO0NOPW1lZXRpbmdAdGgNCiBlZHVkZXdpdGh0aGV0aGluZy5jb206TUFJTFRP
+Om1lZXRpbmdAdGhlZHVkZXdpdGh0aGV0aGluZy5jb20NCkRFU0NSSVBUSU9OO0xBTkdVQUdFPWVu
+LVVTOldoZW46IE1vbmRheVwsIEFwcmlsIDAyXCwgMjAxMiAxMDowMCBBTS0xMDozMCBBTQ0KIC4g
+RWFzdGVybiBTdGFuZGFyZCBUaW1lXG5cbip+Kn4qfip+Kn4qfip+Kn4qfipcbg0KU1VNTUFSWTtM
+QU5HVUFHRT1lbi1VUzpOZXcgRXZlbnQNCkRUU1RBUlQ7VFpJRD1FYXN0ZXJuIFN0YW5kYXJkIFRp
+bWU6MjAxMjA0MDJUMTAwMDAwDQpEVEVORDtUWklEPUVhc3Rlcm4gU3RhbmRhcmQgVGltZToyMDEy
+MDQwMlQxMDMwMDANClVJRDpDMTRBMUE4Ri02ODgxLTQ3MUYtOTI0Ny1COTZFQzUzMkM4NjANCkNM
+QVNTOlBVQkxJQw0KUFJJT1JJVFk6NQ0KRFRTVEFNUDoyMDEyMDMzMVQxNDM5MDZaDQpUUkFOU1A6
+T1BBUVVFDQpTVEFUVVM6Q09ORklSTUVEDQpTRVFVRU5DRToxDQpYLU1JQ1JPU09GVC1DRE8tQVBQ
+VC1TRVFVRU5DRToxDQpYLU1JQ1JPU09GVC1DRE8tT1dORVJBUFBUSUQ6MjEwOTk5NTIwNQ0KWC1N
+SUNST1NPRlQtQ0RPLUJVU1lTVEFUVVM6VEVOVEFUSVZFDQpYLU1JQ1JPU09GVC1DRE8tSU5URU5E
+RURTVEFUVVM6QlVTWQ0KWC1NSUNST1NPRlQtQ0RPLUFMTERBWUVWRU5UOkZBTFNFDQpYLU1JQ1JP
+U09GVC1DRE8tSU1QT1JUQU5DRToxDQpYLU1JQ1JPU09GVC1DRE8tSU5TVFRZUEU6MA0KRU5EOlZF
+VkVOVA0KRU5EOlZDQUxFTkRBUg0K
+
+--_002_11FB0A7C2C955741B3706164011FE65101AFF6252EDFW1MBX22mex0_--
