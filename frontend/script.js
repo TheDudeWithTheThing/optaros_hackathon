@@ -2,6 +2,8 @@ var canvas = document.getElementById('calendar');
 var eventBoxWidth = 260;
 var eventLeftOffset = 50;
 
+var data = {"_id":"4f785ba0ac6ca42d7d57080e","room":"boston-downtown@optaros.com","CalendarEvent":[{"BusyType":"Busy","EndTime":"2012-04-02T07:30:00","StartTime":"2012-04-02T07:00:00"},{"BusyType":"Busy","EndTime":"2012-04-02T09:00:00","StartTime":"2012-04-02T08:30:00"},{"BusyType":"Busy","EndTime":"2012-04-02T11:30:00","StartTime":"2012-04-02T10:30:00"},{"BusyType":"Busy","EndTime":"2012-04-09T10:00:00","StartTime":"2012-04-09T09:00:00"},{"BusyType":"Busy","EndTime":"2012-04-16T10:00:00","StartTime":"2012-04-16T09:00:00"},{"BusyType":"Busy","EndTime":"2012-04-23T10:00:00","StartTime":"2012-04-23T09:00:00"},{"BusyType":"Busy","EndTime":"2012-04-26T09:00:00","StartTime":"2012-04-26T08:00:00"},{"BusyType":"Busy","EndTime":"2012-04-30T10:00:00","StartTime":"2012-04-30T09:00:00"}]};
+
 startTime();
 setDate();
 
@@ -10,6 +12,12 @@ setDate();
 if (canvas.getContext) {
     drawTimeLines();
     drawEvent(495, 540);
+    
+    alert(timeInMinutes());
+    for (var info in data.CalendarEvent) {
+/*         var start = timeInMinutes(info.StartTime); */
+/*         drawEvent(info.StartTime, info.EndTime, info.BusyType); */
+    }
 }
 
 function drawTimeLines() {
@@ -46,9 +54,7 @@ function drawEvent (startTime, endTime, available) {
     var begin = startTime * 2;
     var duration = (endTime - startTime) * 2;
     var context = canvas.getContext('2d');
-    context.fillRect(eventLeftOffset, begin, eventBoxWidth, duration);
-    
-    
+    context.fillRect(eventLeftOffset, begin, eventBoxWidth, duration);   
 }
 
 function startTime()
@@ -98,4 +104,11 @@ function setDate () {
     var months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
     document.getElementById('currentWeekDay').innerHTML = days[wd];
     document.getElementById('currentDate').innerHTML = months[m] + " " + d;
+}
+
+function timeInMinutes(time) {
+    var date = new Date(time);
+    var m = date.getMinutes();
+    var h = date.getHours() * 60;
+    return m + h;
 }
