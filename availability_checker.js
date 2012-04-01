@@ -1,18 +1,16 @@
-var mongoose = require('mongoose')
-  , roomSchema = require('./model/room')
-  , util = require('util')
-  , conf = require('./conf')
-  , db = mongoose.createConnection('mongodb://'+conf.db.host + '/' + conf.db.schema)
-  , roomModel = db.model('room', roomSchema)
-  , https = require('https')
-  , fs = require('fs')
-  , xml2js = require('xml2json')
-  , ews_client = require('./ews_client');
+var mongoose = require('mongoose');
+var conf = require('./conf');
+
+mongoose.connect('mongodb://localhost/dev_hackathon');
+
+var roomSchema = require('./model/room');
+var roomModel = mongoose.model('room', roomSchema);
+var ews_client = require('./ews_client');
 
 
 function save_availability(room_name, ews_response) {
   if(!ews_response['soap:Envelope']['soap:Body'].GetUserAvailabilityResponse.FreeBusyResponseArray.FreeBusyResponse.FreeBusyView.CalendarEventArray) {
-    return;
+    process.exit();
   }
   var room = new roomModel({room: room_name});
   room.CalendarEvent = ews_response['soap:Envelope']['soap:Body'].GetUserAvailabilityResponse.FreeBusyResponseArray.FreeBusyResponse.FreeBusyView.CalendarEventArray.CalendarEvent;
@@ -21,16 +19,22 @@ function save_availability(room_name, ews_response) {
   roomModel.update({room: room_name}, {$set: {CalendarEvent: room.CalendarEvent}}, {upsert: true},  function(err) {
     if (err) console.log(err);
     if (!err) console.log('saved: ' + room_name);
+    process.exit();
   });
-
-  console.log('no exit: ' + room_name);
 }
 
-
-
 var start = new Date();
-var end = new Date().setMonth( start.getMonth() + 1 );
+start.setDate( start.getDay() );
+start.setHours(0);
+start.setMinutes(0);
+start.setSeconds(0);
 
-conf.rooms.forEach( function(room) {
-  ews_client(room, start, end, save_availability);
-});
+var end = new Date();
+end.setDate( start.getDay() + 1);
+start.setHours(0);
+start.setMinutes(0);
+start.setSeconds(0);
+
+var room = 'boston-downtown@optaros.com';
+ews_client.fetch(room, start, end, save_availability);
+

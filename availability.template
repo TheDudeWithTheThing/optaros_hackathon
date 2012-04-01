@@ -4,7 +4,7 @@
   <soap:Body>
     <GetUserAvailabilityRequest xmlns="http://schemas.microsoft.com/exchange/services/2006/messages">
  <TimeZone xmlns="http://schemas.microsoft.com/exchange/services/2006/types">
-        <Bias>480</Bias>
+        <Bias>300</Bias>
         <StandardTime>
           <Bias>0</Bias>
           <Time>02:00:00</Time>
