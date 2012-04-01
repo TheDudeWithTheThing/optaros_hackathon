@@ -1,13 +1,11 @@
-function start() {
-    var canvas = document.getElementById('calendar');
-    var eventBoxWidth = 260;
-    var eventLeftOffset = 50;
-    
-    var data = {"_id":"4f78a010ac6ca42d7d570812","room":"boston-downtown@optaros.com","CalendarEvent":[{"BusyType":"Busy","EndTime":"2012-04-01T10:30:00","StartTime":"2012-04-01T10:00:00"},{"BusyType":"Busy","EndTime":"2012-04-01T12:00:00","StartTime":"2012-04-01T11:30:00"},{"BusyType":"Busy","EndTime":"2012-04-01T16:30:00","StartTime":"2012-04-01T13:30:00"}]}
-    
+function start(data) {
+    canvas = document.getElementById('calendar');
+    eventBoxWidth = 260;
+    eventLeftOffset = 50;
+
     startTime();
     setDate();
-    
+
     // Check the element is in the DOM and the browser supports canvas
     if (canvas.getContext) {
         var context = canvas.getContext('2d');

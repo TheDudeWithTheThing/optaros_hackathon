@@ -16,7 +16,7 @@ var app = express.createServer(
 
 app.get('/data.json', function(req, res) {
   roomModel.find({room: 'boston-downtown@optaros.com', }, function(err, docs) {
-    res.json(docs);
+    res.json(docs[0]);
   });
 });
 
