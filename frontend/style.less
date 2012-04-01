@@ -58,7 +58,7 @@ body {
         background-color: @current-event;
         border: 25px solid @current-event;
         height: 275px;
-        max-height: 275px;
+/*         max-height: 275px; */
         overflow: auto;
         margin-top: 25px;
                 
@@ -104,6 +104,20 @@ body {
         background-color: @room-open;
         border-color: @room-open;
         display: none;
+        height: 340px;
+        color: @info-background;
+        h1 {
+            text-align: left;
+            font-size: 50px;
+            width: auto;
+        }
+        
+        .open {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 100px;
+        }
     }
     
     .upcoming-events {
@@ -129,6 +143,9 @@ body {
             &.dibs {
                 background-color: @room-open;
                 text-align: center;
+                font-size: 40px;
+                text-transform: uppercase;
+                color: @info-background;
             }
         }
     }
@@ -141,5 +158,5 @@ body {
     width: 324px;
     height: 2880px;
 */
-    background-color: @upcoming-event;
+    background-color: @room-open;
 }
