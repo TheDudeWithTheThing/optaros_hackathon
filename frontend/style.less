@@ -1,0 +1,142 @@
+@import "reset.css";
+
+@info-background: #222222;
+@info-text: #FFFFFF;
+@current-event: #2EB3FE;
+@room-open: #CDFF46;
+@upcoming-event: #FF038A;
+
+body {
+    overflow: hidden;
+    font-family: "Helvetica Neue", "Arial", sans-serif; 
+    height: 100%;
+    width: 100%;   
+    h1 {
+        font-size: 90px;
+    }
+    h2 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+    h3 {
+        font-size: 1.3em;
+    }
+    h4 {
+        font-size: 1.0em
+    }
+}
+.iPad-wrapper {
+    position: relative;
+    height: 674px;
+    width: 1024px;
+}
+
+.calendar-info {
+    position: fixed;
+    height: inherit;
+    width: 700px;
+    background-color: @info-background;
+    padding: 25px;
+    box-sizing: border-box;
+    color: @info-text;
+
+    h1 {
+        display: inline-block;
+        text-align: right;
+        width: 370px;
+    }
+    h2 {
+        display: inline-block;
+        width: 200px;
+        margin-left: 25px;
+    }
+    
+    .current-event {
+        position: relative;
+        box-sizing: border-box;
+        background-color: @current-event;
+        border: 25px solid @current-event;
+        height: 275px;
+        max-height: 275px;
+        overflow: auto;
+        margin-top: 25px;
+                
+        .event-info {
+            margin-bottom: 25px;
+            
+            &:last-child {
+                margin: 0;
+            }
+        }
+        h4 {
+            text-decoration: underline;
+        }
+    }
+    
+    .event-extra-info {
+        height:100px;
+        margin-top: 5px;
+        text-align: right;
+        .info-icons {
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-size: 20px;
+            height: inherit;
+            padding-left: 30px;
+            &.users {
+                background-image: url('icons/users.png');
+            }
+            &.time-left {
+                background-image: url('icons/timer.png');
+                background-size: 15px;
+                padding-left: 25px;
+            }
+            & + .info-icons {
+                margin-left: 25px;
+            }
+        }
+    }
+    
+    .room-open {
+        .current-event;
+        background-color: @room-open;
+        border-color: @room-open;
+        display: none;
+    }
+    
+    .upcoming-events {
+        position: absolute;
+        bottom: 25px;
+        h4 {
+            margin-bottom: 10px;
+        }
+        li {
+            box-sizing: border-box;
+            display: inline-block;
+            max-height: 140px;
+            min-height: 140px;
+            width: 140px;
+            padding: 25px;
+            background-color: @upcoming-event;
+            vertical-align: top;
+            
+            & + li {
+                margin-left: 25px;
+            }
+            &.dibs {
+                background-color: @room-open;
+                text-align: center;
+            }
+        }
+    }
+}
+
+#calendar {
+    position: absolute;
+    right: 0px;
+/*
+    width: 324px;
+    height: 2880px;
+*/
+    background-color: @upcoming-event;
+}
