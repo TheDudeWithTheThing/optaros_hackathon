@@ -1,4 +1,4 @@
-/* function start() { */
+function start() {
     var canvas = document.getElementById('calendar');
     var eventBoxWidth = 260;
     var eventLeftOffset = 50;
@@ -22,7 +22,7 @@
              drawEvent(context, timeInMinutes(hackDate(info.StartTime)), timeInMinutes(hackDate(info.EndTime)), text);
         }
     }
-/* } */
+}
 
 function drawTimeLines(context) {
     for (h = 0; h < 24; h++) {
