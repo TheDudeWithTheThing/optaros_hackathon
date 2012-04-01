@@ -146,7 +146,8 @@ function displayTime(time) {
 }
 
 function hackDate(d) {
-    return d.replace(/-/g, '/').replace('T', ' ');
+    var blah = d.replace(/\..+/g, '').replace(/-/g, '/').replace('T', ' ');
+    return blah;
 }
 
 function toggleAvailable() {
@@ -159,7 +160,7 @@ function toggleAvailable() {
         document.getElementById('upcomingEvents').style.display = 'block';
         document.getElementById('roomOpen').style.display = 'block';
     }
-    t = setTimeout('toggleAvailable()', 60000);
+    t = setTimeout('toggleAvailable()', 5000);
 }
 function checkCurrentAvailable () {
     currentTime = new Date();
