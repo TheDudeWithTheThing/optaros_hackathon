@@ -2,7 +2,8 @@ var express = require('express')
   , mongoose = require('mongoose')
   , roomSchema = require('./model/room')
   , conf = require('./conf')
-  , ews_client = require('./ews_client');
+  , ews_client = require('./ews_client')
+  , child = require('child_process');
 
 express.logger.token('real_ip', function(req, res) { return req.headers['x-forwarded-for'] || req.socket.remoteAddress; });
 
@@ -30,10 +31,13 @@ app.get('/book', function(req, res) {
   var start = new Date();
   start.setSeconds(0);
   start.setMinutes(start.getMinutes() - (start.getMinutes() % 30));
+
   var end = new Date();
   end.setSeconds(0);
   end.setMinutes(start.getMinutes() + 30);
+
   ews_client.book(room, start, end, function() {
+    child.exec('node availability_checker.js');
     res.json({room: room, start: start.toString(), end: end.toString()});
   });
 });

@@ -3,6 +3,8 @@ function start(data) {
     eventBoxWidth = 260;
     eventLeftOffset = 50;
 
+    canvas.width = canvas.width;
+
     startTime();
     setDate();
 
@@ -161,20 +163,24 @@ function toggleAvailable() {
 }
 function checkCurrentAvailable () {
     currentTime = new Date();
-
-    for (var i = 0; i < data.CalendarEvent.length;  i++) {
+  
+    if (data && data.CalendarEvent) {
+      for (var i = 0; i < data.CalendarEvent.length;  i++) {
         var info = data.CalendarEvent[i];
         var startTime = new Date(hackDate(info.StartTime));
         var endTime = new Date(hackDate(info.EndTime));
-        
+
         if (currentTime > startTime && currentTime < endTime) {
-            return false;
+          return false;
         }
+      }
     }
     
     return true;
 }
 
 function callDibs() {
-    alert("You Called Dibs!");
+  $.get('/book?room=boston-downtown@optaros.com', function(result_data) {
+    alert('Dibs called for Downtown, your request will be processed shortly.');
+  }, 'json');
 }

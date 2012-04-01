@@ -10,7 +10,8 @@ var ews_client = {
   },
   book: function (room, start, end, cb) {
     var data = fs.readFileSync('./book.template', 'utf-8');
-    ews_request(data, room, start, end, cb);
+    cb();
+    //ews_request(data, room, start, end, cb);
   }
 }
 
