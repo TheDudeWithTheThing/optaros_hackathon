@@ -15,7 +15,7 @@
                     <span id="currentDate">September 30</span>    <!-- Current month (word) and day (numeral) -->
                 </h2>
                 <!-- Current Event Information -->
-                <div class="current-event">
+                <div id="currentEvent" class="current-event">
                     <h4>Title</h4>
                     <h3 class="event-info">Hacktaros Hackathon Meeting</h3>
                     <h4>Organizer</h4>
@@ -34,26 +34,13 @@ Stuff check it out leo non nisi. Brizzle black, arcu non fo shizzle facilisizzle
                     </span>
                 </div>
                 <!-- Room Open -->
-                <div class="room-open">
+                <div id="roomOpen" class="room-open">
                     <h4>Room is Open!</h4>
                 </div>
                 <!-- Upcoming Event Information -->
-                <div class="upcoming-events">
-                    <h4>Upcoming Events</h4>
+                <div id="upcomingEvents" class="upcoming-events">
                     <ul>
-                        <li>
-                           <h5>Boston Bi-Weekly Meeting</h5> 
-                           <h5>3:45PM</h5>
-                        </li>
-                        <li>
-                           <h5>Boston Bi-Weekly Meeting</h5> 
-                           <h5>3:45PM</h5>
-                        </li>
-                        <li>
-                           <h5>Boston Bi-Weekly Meeting</h5> 
-                           <h5>3:45PM</h5>
-                        </li>
-                        <li class="dibs">
+                        <li class="dibs" onclick="callDibs()">
                             <h5>No More Events!</h5>
                             <h5>Call Dibs</h5> 
                         </li>

@@ -2,7 +2,7 @@ var canvas = document.getElementById('calendar');
 var eventBoxWidth = 260;
 var eventLeftOffset = 50;
 
-var data = {"_id":"4f785ba0ac6ca42d7d57080e","room":"boston-downtown@optaros.com","CalendarEvent":[{"BusyType":"Busy","EndTime":"2012-04-02T07:30:00","StartTime":"2012/04/02T07:00:00"},{"BusyType":"Busy","EndTime":"2012-04-02T13:40:00","StartTime":"2012/04/02T08:30:00"},/* {"BusyType":"Busy","EndTime":"2012-04-02T11:30:00","StartTime":"2012-04-02T10:30:00"},{"BusyType":"Busy","EndTime":"2012-04-09T10:00:00","StartTime":"2012-04-09T09:00:00"},{"BusyType":"Busy","EndTime":"2012-04-16T10:00:00","StartTime":"2012-04-16T09:00:00"},{"BusyType":"Busy","EndTime":"2012-04-23T10:00:00","StartTime":"2012-04-23T09:00:00"},{"BusyType":"Busy","EndTime":"2012-04-26T09:00:00","StartTime":"2012-04-26T08:00:00"},{"BusyType":"Busy","EndTime":"2012-04-30T10:00:00","StartTime":"2012-04-30T09:00:00"} */]};
+var data = {"_id":"4f78a010ac6ca42d7d570812","room":"boston-downtown@optaros.com","CalendarEvent":[{"BusyType":"Busy","EndTime":"2012-04-01T10:30:00","StartTime":"2012-04-01T10:00:00"},{"BusyType":"Busy","EndTime":"2012-04-01T12:00:00","StartTime":"2012-04-01T11:30:00"},{"BusyType":"Busy","EndTime":"2012-04-01T14:30:00","StartTime":"2012-04-01T13:30:00"}]}
 
 startTime();
 setDate();
@@ -10,10 +10,15 @@ setDate();
 // Check the element is in the DOM and the browser supports canvas
 if (canvas.getContext) {
     var context = canvas.getContext('2d');
+    startTime(context);
+    toggleAvailable();
+
+    
     drawTimeLines(context);
     for (var i = 0; i < data.CalendarEvent.length;  i++) {
          var info = data.CalendarEvent[i]
-         drawEvent(context, timeInMinutes(hackDate(info.StartTime)), timeInMinutes(hackDate(info.EndTime)));
+         var text = "Start at " + displayTime(hackDate(info.StartTime));
+         drawEvent(context, timeInMinutes(hackDate(info.StartTime)), timeInMinutes(hackDate(info.EndTime)), text);
     }
 }
 
@@ -46,13 +51,22 @@ function drawTimeLines(context) {
 }
 
 // startTime and endTime must be in minutes starting from midnight.
-function drawEvent (context, startTime, endTime) {
+function drawEvent (context, startTime, endTime, text) {
+    context.fillStyle = '#2EB3FE';
+    context.stokeStyle = '#222222';
+
     var begin = startTime * 2;
     var duration = (endTime - startTime) * 2;
-    context.fillRect(eventLeftOffset, begin, eventBoxWidth, duration);   
+    context.fillRect(eventLeftOffset, begin, eventBoxWidth, duration);  
+    context.strokeRect(eventLeftOffset, begin, eventBoxWidth, duration);
+    
+    context.font = '   16px HelveticaNeue';
+    context.fillStyle = '#222222';
+    context.textBaseline = 'hanging';
+    context.fillText(text, eventLeftOffset+ 5, begin + 5)
 }
 
-function startTime()
+function startTime(context)
 {
     var today = new Date();
     var h = today.getHours();
@@ -76,7 +90,7 @@ function startTime()
     
     // Sets the window to scroll to the correct spot
     var scrollPosition = positionTime - 337;
-    window.scrollTo(0, scrollPosition);    
+    window.scrollTo(0, scrollPosition);  
     
     // Add text to the block that is generated
     t = setTimeout('startTime()', 500);    
@@ -109,6 +123,58 @@ function timeInMinutes(time) {
     return total;
 }
 
+function displayTime(time) {
+    var date = new Date(time);
+    var h = date.getHours();
+    var m = date.getMinutes();
+
+    var z = "AM";
+    if (h >= 12 && h <= 23) {
+        z = "PM";
+    }
+    h = h % 12;
+    if (h == 0) {
+        h = 12;
+    }
+    m = checkTime(m);
+
+    
+    var text = h + ":" + m + " " + z;
+    return text;
+}
+
 function hackDate(d) {
     return d.replace(/-/g, '/').replace('T', ' ');
+}
+
+function toggleAvailable() {
+    if (!checkCurrentAvailable()) {
+        document.getElementById('currentEvent').style.display = 'block';
+        document.getElementById('upcomingEvents').style.display = 'none';
+        document.getElementById('roomOpen').style.display = 'none';
+    } else {
+        document.getElementById('currentEvent').style.display = 'none';
+        document.getElementById('upcomingEvents').style.display = 'block';
+        document.getElementById('roomOpen').style.display = 'block';
+    }
+/*     t = setTimeout('toggleAvailable()', 500);     */
+}
+function checkCurrentAvailable () {
+    currentTime = new Date();
+
+    for (var i = 0; i < data.CalendarEvent.length;  i++) {
+        var info = data.CalendarEvent[i];
+        var startTime = new Date(hackDate(info.StartTime));
+        var endTime = new Date(hackDate(info.EndTime));
+        
+        if (currentTime > startTime && currentTime < endTime) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+function callDibs() {
+    alert("You Called Dibs!");
 }
