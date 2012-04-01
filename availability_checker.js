@@ -11,6 +11,9 @@ var mongoose = require('mongoose')
 
 
 function save_availability(room_name, ews_response) {
+  if(!ews_response['soap:Envelope']['soap:Body'].GetUserAvailabilityResponse.FreeBusyResponseArray.FreeBusyResponse.FreeBusyView.CalendarEventArray) {
+    return;
+  }
   var room = new roomModel({room: room_name});
   room.CalendarEvent = ews_response['soap:Envelope']['soap:Body'].GetUserAvailabilityResponse.FreeBusyResponseArray.FreeBusyResponse.FreeBusyView.CalendarEventArray.CalendarEvent;
   console.log('processing: ' + room_name);
