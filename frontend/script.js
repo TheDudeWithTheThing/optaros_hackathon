@@ -159,7 +159,7 @@ function toggleAvailable() {
         document.getElementById('upcomingEvents').style.display = 'block';
         document.getElementById('roomOpen').style.display = 'block';
     }
-/*     t = setTimeout('toggleAvailable()', 500);     */
+    t = setTimeout('toggleAvailable()', 60000);
 }
 function checkCurrentAvailable () {
     currentTime = new Date();
