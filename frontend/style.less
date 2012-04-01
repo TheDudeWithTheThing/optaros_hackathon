@@ -72,6 +72,21 @@ body {
         h4 {
             text-decoration: underline;
         }
+        h1 {
+            text-align: left;
+            font-size: 50px;
+            width: auto;
+        }
+        
+        .open {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 100px;
+        }
+        background-color: @upcoming-event;
+        border-color: @upcoming-event;
+        height: 500px;
     }
     
     .event-extra-info {
@@ -159,4 +174,8 @@ body {
     height: 2880px;
 */
     background-color: @room-open;
+    
+    &.closed {
+        background-color: @upcoming-event;
+    }
 }
